@@ -8,7 +8,8 @@ import { useCart } from '../context/CartContext';
 import { io } from 'socket.io-client';
 import '../styles/Menu.css';
 
-const socket = io('http://localhost:5055'); 
+const apiUrl = process.env.REACT_APP_API_URL;
+const socket = io(apiUrl); 
 
 const importAll = (r) => {
   let images = {};
@@ -28,7 +29,7 @@ function Menu() {
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:5055/api/menu')
+    axios.get(`${apiUrl}/api/menu`)
       .then((res) => setItems(res.data))
       .catch((err) => console.error('Menu fetch error:', err));
   }, []);
