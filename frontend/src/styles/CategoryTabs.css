@@ -1,0 +1,32 @@
+.category-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 1rem 0;
+  overflow-x: auto;
+  padding: 0 10px;
+}
+
+.category-button {
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-button.active {
+  background-color: black;
+  color: white;
+}
+
+.category-icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+}
