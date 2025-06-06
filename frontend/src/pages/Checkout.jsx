@@ -65,7 +65,7 @@ const Checkout = () => {
     };
       console.log('🛒 Submitting order:', order); 
     try {
-      const res = await fetch(`${apiUrl}/api/orders', {
+      const res = await fetch(`${apiUrl}/api/orders`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(order),
