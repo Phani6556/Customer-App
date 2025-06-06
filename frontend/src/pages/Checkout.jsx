@@ -77,7 +77,7 @@ const Checkout = () => {
         setTimeout(() => navigate('/'), 2000);
       } else {
         const errorData = await res.json();
-        toast.error(`❌ ${errorData.message || 'Order failed. Please try again.'}`);
+        toast.error(`${errorData.message || 'Order failed. Please try again.'}`);
       }
     } catch (err) {
       console.error(err);
