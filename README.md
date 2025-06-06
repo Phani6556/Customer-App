@@ -88,3 +88,5 @@ Returns all menu items.
 POST /api/orders
 Places an order with customer, type, items, total, and cooking notes.
 
+Customer Demo link - https://customer-app-psi.vercel.app/
+
