@@ -17,6 +17,7 @@ const Checkout = () => {
   const [showNoteModal, setShowNoteModal] = useState(false);
   const [searchTerm,  setSearchTerm] = useState('');
   const [tableNumber, setTableNumber] = useState(null);
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   const navigate = useNavigate();
 
@@ -30,7 +31,7 @@ const Checkout = () => {
     nameRef.current?.focus();
   }, []);
  useEffect(() => {
-  const socket = io('http://localhost:5055');
+  const socket = io(apiUrl);
 
   if (orderType === 'Dine In') {
     socket.emit('requestTable');
@@ -64,7 +65,7 @@ const Checkout = () => {
     };
       console.log('🛒 Submitting order:', order); 
     try {
-      const res = await fetch('http://localhost:5055/api/orders', {
+      const res = await fetch(`${apiUrl}/api/orders', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(order),
